@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.top-scrollbar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  direction: rtl; /* this flips the scroll bar to TOP */
+}
+
+.top-scrollbar::-webkit-scrollbar {
+  height: 8px; /* scrollbar thickness */
+}
+
+.top-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.top-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.top-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.top-scrollbar > * {
+  direction: ltr; /* fixes reversed content */
+}
