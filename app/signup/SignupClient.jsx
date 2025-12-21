@@ -19,7 +19,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import api from "@/lib/api";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { CircularProgress } from "@mui/material";
-import OTPInput from "./utils/OTPInput";
+import OTPInput from "../utils/OTPInput";
 import { toast } from "sonner";
 import { AuthContext } from "@/context/authContext";
 

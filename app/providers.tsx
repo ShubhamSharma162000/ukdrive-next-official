@@ -4,12 +4,13 @@ import { ThemeProvider, CssBaseline } from "@mui/material";
 import ukdriveTheme from "./theme/ukdriveTheme";
 import { Toaster } from "sonner";
 import { AuthProvider } from "../context/authContext";
+import StoreClientLayout from "./store-client-layout";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={ukdriveTheme}>
+      <CssBaseline />
       <AuthProvider>
-        <CssBaseline />
         {children}
         <Toaster
           position="top-center"

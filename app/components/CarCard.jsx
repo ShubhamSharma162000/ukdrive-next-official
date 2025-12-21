@@ -1,19 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Paper,
-  Button,
-  Tabs,
-  Tab,
-  Stack,
-  Chip,
-} from "@mui/material";
+import { Box, Typography, Paper, Button, Stack, Chip } from "@mui/material";
 import { motion } from "framer-motion";
-import api from "../../../lib/api";
 import { useRouter } from "next/navigation";
 
 export const CarCard = ({ car }) => {
@@ -158,7 +147,7 @@ export const CarCard = ({ car }) => {
           <Button
             variant="contained"
             fullWidth
-            onClick={() => router.push(`/home/renting/vehicle/${car._id}`)}
+            onClick={() => router.push(`/renting/vehicle/${car._id}`)}
             sx={{
               mt: 2,
               borderRadius: 2,

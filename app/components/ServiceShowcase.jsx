@@ -34,13 +34,30 @@ export default function ServiceShowcase() {
     <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "#fff" }}>
       <Container maxWidth="lg">
         <Typography
-          variant="h1"
-          fontWeight={900}
-          mb={6}
-          sx={{ justifyContent: "center", textAlign: "center" }}
+          sx={{
+            textAlign: "center",
+            fontWeight: 900,
+            fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
+            mb: 3,
+            lineHeight: 1.15,
+            color: "text.primary",
+          }}
         >
-          One App. Multiple Smart Services
+          One App.
+          <Box
+            component="span"
+            sx={{
+              background: "linear-gradient(90deg, #2563eb, #4f46e5, #7c3aed)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              ml: 1,
+            }}
+          >
+            Multiple Smart Services
+          </Box>
         </Typography>
+
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={4}

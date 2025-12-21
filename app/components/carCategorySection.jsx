@@ -60,7 +60,6 @@ Comfortable for 6–7 passengers with extra luggage room.`,
             flex: 1,
             height: 1,
             bgcolor: "grey.300",
-            mx: 2,
             borderRadius: 2,
           }}
         />
@@ -72,7 +71,7 @@ Comfortable for 6–7 passengers with extra luggage room.`,
           transition={{ duration: 0.6 }}
         >
           <Typography
-            variant="h5"
+            variant="h2"
             sx={{
               textAlign: "center",
               fontWeight: 900,
@@ -103,16 +102,6 @@ Comfortable for 6–7 passengers with extra luggage room.`,
             Perfect Car for Every Journey in India
           </Typography>
         </motion.div>
-
-        <Box
-          sx={{
-            flex: 1,
-            height: 1,
-            bgcolor: "grey.300",
-            mx: 2,
-            borderRadius: 2,
-          }}
-        />
       </Box>
 
       <Typography

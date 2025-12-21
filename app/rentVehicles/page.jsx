@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useEffect, useState } from "react";
 import {
   Box,
@@ -13,10 +11,8 @@ import {
   Tab,
   Stack,
 } from "@mui/material";
-import { motion } from "framer-motion";
-import api from "../../../lib/api";
 import { CarCard } from "../components/CarCard";
-import VehicleDetailsModal from "../components/rent-vehicle/VehicleDetailsModal";
+import api from "@/lib/api";
 
 const NoData = ({ text = "No vehicles available" }) => (
   <Box
@@ -60,18 +56,42 @@ export default function RentingPage() {
     vehicles.filter((v) => v.type?.toLowerCase() === category.toLowerCase());
 
   return (
-    <Box sx={{ width: "100%", py: 8, px: { xs: 2, md: 8 } }}>
-      <Typography
-        variant="h3"
-        sx={{
-          textAlign: "center",
-          fontWeight: 900,
-          mb: 6,
-          color: "#03167d",
-        }}
-      >
-        Rent Your Perfect Vehicle
-      </Typography>
+    <Box sx={{ width: "100%", py: 2, px: { xs: 1, md: 4 } }}>
+      <Box textAlign="center" mb={6}>
+        <Typography
+          sx={{
+            fontWeight: 900,
+            fontSize: { xs: "1.5rem", sm: "1.6rem", md: "2.2rem" },
+            lineHeight: 1.15,
+            color: "#03167d",
+          }}
+        >
+          Rent Your
+          <Box
+            component="span"
+            sx={{
+              background: "linear-gradient(90deg, #03167d, #2563eb, #4f46e5)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              ml: 1,
+            }}
+          >
+            Perfect Vehicle
+          </Box>
+        </Typography>
+
+        <Box
+          sx={{
+            width: 80,
+            height: 4,
+            bgcolor: "#2563eb",
+            mx: "auto",
+            mt: 2,
+            borderRadius: 99,
+          }}
+        />
+      </Box>
 
       <Box
         sx={{
@@ -100,7 +120,6 @@ export default function RentingPage() {
           </Box>
         ))}
       </Box>
-
       {getVehiclesByCategory(mobileCategory).length === 0 && (
         <Grid sx={{ gridColumn: "span 12" }}>
           <NoData text={`No ${mobileCategory} vehicles available`} />
@@ -124,12 +143,12 @@ export default function RentingPage() {
 
           return (
             <Box key={category} sx={{ mb: 8 }}>
-              <Typography
+              {/* <Typography
                 variant="h4"
                 sx={{ fontWeight: 800, mb: 3, color: "#222" }}
               >
                 {category} Cars
-              </Typography>
+              </Typography> */}
 
               <Grid container spacing={4}>
                 {cars.map((car) => (

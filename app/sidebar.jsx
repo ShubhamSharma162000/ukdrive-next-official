@@ -71,9 +71,6 @@ export default function Sidebar({ open, onClose }) {
             <Typography sx={{ fontSize: "0.85rem", opacity: 0.8 }}>
               {user?.phone}
             </Typography>
-            <Typography sx={{ fontSize: "0.85rem", opacity: 0.8 }}>
-              {user?.phone}
-            </Typography>
           </Box>
         </Box>
 
@@ -81,11 +78,11 @@ export default function Sidebar({ open, onClose }) {
 
         <Box sx={{ display: "flex", flexDirection: "column", mt: 2 }}>
           {[
-            { label: "Home", href: "/home" },
-            { label: "Download", href: "/home/download" },
-            { label: "Rent", href: "/home/rentVehicles" },
-            { label: "Contact Us", href: "/home/contactUs" },
-            { label: "About Us", href: "/home/aboutUs" },
+            { label: "Home", href: "/" },
+            { label: "Download", href: "/download" },
+            { label: "Rent", href: "/rentVehicles" },
+            { label: "Contact Us", href: "/contactUs" },
+            { label: "About Us", href: "/aboutUs" },
           ].map((item) => (
             <Link
               key={item.href}

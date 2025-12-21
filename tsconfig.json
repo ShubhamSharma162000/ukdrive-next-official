@@ -32,9 +32,9 @@
     "app/home/page.jsx",
     "app/home/ukdriveHome.jsx",
     "app/home/productCard.jsx",
-    "app/home/sidebar.jsx",
+    "app/sidebar.jsx",
     "app/TopBar.jsx",
-    "app/home/store-client-layout.jsx",
+    "app/store-client-layout.jsx",
     "app/signup/page.jsx",
     "app/login/page.jsx"
   ],

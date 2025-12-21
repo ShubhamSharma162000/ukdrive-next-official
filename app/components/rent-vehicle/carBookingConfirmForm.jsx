@@ -12,7 +12,7 @@ import {
   Box,
   Stack,
 } from "@mui/material";
-import api from "../../../../lib/api";
+import api from "@/lib/api";
 import { toast } from "sonner";
 
 export default function CarBookingConfirmForm({ open, onClose, car, days }) {
@@ -75,8 +75,7 @@ export default function CarBookingConfirmForm({ open, onClose, car, days }) {
       await loadRazorpay();
 
       const res = await api.post("/api/v1/payment/create-order-car-booking", {
-        // amount: car?.rentPerDay * days,
-        amount: 1,
+        amount: car?.rentPerDay * days,
         carId: car?._id,
         vehicleName: car?.vehicleName,
       });

@@ -13,7 +13,6 @@ export default function StoreClientLayout({ children }) {
       <TopBar onMenuClick={() => setOpenSidebar(true)} />
       <Sidebar open={openSidebar} onClose={() => setOpenSidebar(false)} />
       {children}
-
       <Footer />
     </>
   );

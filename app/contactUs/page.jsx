@@ -23,7 +23,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { useState } from "react";
-import api from "../../../lib/api";
+import api from "../../lib/api";
 import { toast } from "sonner";
 
 export default function ContactPage() {
@@ -146,56 +146,120 @@ export default function ContactPage() {
         <Grid container spacing={4}>
           <Stack direction={isMobile ? "column" : "row"} spacing={8}>
             <Grid item xs={12} md={5}>
-              <Stack spacing={3}>
-                <Typography variant="h5" fontWeight={600}>
-                  Get in Touch
-                </Typography>
+              <Stack
+                spacing={4}
+                sx={{
+                  p: 4,
+                  borderRadius: 5,
+                  background:
+                    "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(226, 232, 251, 0.9))",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
+                <Box>
+                  <Typography
+                    sx={{
+                      fontWeight: 900,
+                      fontSize: "1.6rem",
+                      mb: 1,
+                    }}
+                  >
+                    Get in Touch
+                  </Typography>
 
-                <Typography color="text.secondary">
-                  Reach us via phone, email, or visit our office. Our support
-                  team responds within 24 hours.
-                </Typography>
+                  <Typography
+                    sx={{
+                      color: "text.secondary",
+                      maxWidth: 360,
+                    }}
+                  >
+                    Reach us anytime via phone or email. Our support team
+                    usually responds within 24 hours.
+                  </Typography>
+                </Box>
 
-                <Paper sx={infoCardStyle}>
-                  <PhoneIcon color="primary" />
-                  <Box>
-                    <Typography fontWeight={600}>Phone</Typography>
-                    <Typography color="text.secondary">
-                      +91 95205 59469
-                    </Typography>
-                  </Box>
-                </Paper>
+                {[
+                  {
+                    icon: <PhoneIcon />,
+                    title: "Phone",
+                    value: "+91 95205 59469",
+                  },
+                  {
+                    icon: <EmailIcon />,
+                    title: "Email",
+                    value: "support@ukdrive.in",
+                  },
+                  {
+                    icon: <LocationOnIcon />,
+                    title: "Office Address",
+                    value: "Durgapuri, Kotdwara, Uttarakhand – 246149",
+                  },
+                ].map((item, i) => (
+                  <Paper
+                    key={i}
+                    elevation={0}
+                    sx={{
+                      p: 2.5,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                      borderRadius: 4,
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      backgroundColor: "#ffffff",
+                      "&:hover": {
+                        transform: "translateX(6px)",
+                        boxShadow: "0 12px 30px rgba(30,64,175,0.18)",
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: "50%",
+                        bgcolor: "#b9b9f8ff",
+                        color: "#05058fff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {item.icon}
+                    </Box>
 
-                <Paper sx={infoCardStyle}>
-                  <EmailIcon color="primary" />
-                  <Box>
-                    <Typography fontWeight={600}>Email</Typography>
-                    <Typography color="text.secondary">
-                      support@ukdrive.in
-                    </Typography>
-                  </Box>
-                </Paper>
-
-                <Paper sx={infoCardStyle}>
-                  <LocationOnIcon color="primary" />
-                  <Box>
-                    <Typography fontWeight={600}>Office Address</Typography>
-                    <Typography color="text.secondary">
-                      Durgapuri, Kotdwara, Uttarakhand – 246149, India
-                    </Typography>
-                  </Box>
-                </Paper>
+                    <Box>
+                      <Typography fontWeight={700}>{item.title}</Typography>
+                      <Typography
+                        sx={{
+                          color: "text.secondary",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        {item.value}
+                      </Typography>
+                    </Box>
+                  </Paper>
+                ))}
 
                 <Divider />
 
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ ml: 2 }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    color: "text.secondary",
+                    fontSize: "0.85rem",
+                  }}
                 >
-                  Office Hours: <br />
-                  Mon – Sat: 9:00 AM – 7:00 PM
-                </Typography>
+                  ⏰
+                  <Typography variant="body2">
+                    <strong>Office Hours</strong>
+                    <br />
+                    Mon – Sat: 9:00 AM – 7:00 PM
+                  </Typography>
+                </Box>
               </Stack>
             </Grid>
             <Box
@@ -227,6 +291,10 @@ export default function ContactPage() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                borderRadius: 5,
+                background:
+                  "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(226, 232, 251, 0.9))",
+                backdropFilter: "blur(10px)",
               }}
             >
               <Typography variant="h5" fontWeight={600} mb={1}>
@@ -340,6 +408,9 @@ export default function ContactPage() {
             borderRadius: 3,
             textAlign: "center",
             boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+            background:
+              "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(226, 232, 251, 0.9))",
+            backdropFilter: "blur(10px)",
           }}
         >
           <Typography variant="h6" fontWeight={600} mb={1}>
