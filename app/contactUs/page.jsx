@@ -25,6 +25,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { useState } from "react";
 import api from "../../lib/api";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const theme = useTheme();
@@ -125,14 +126,33 @@ export default function ContactPage() {
   return (
     <Box sx={{ bgcolor: "#f9fafb", minHeight: "100vh" }}>
       <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         sx={{
-          background: "linear-gradient(135deg, #1e3c72, #2a5298)",
-          color: "#fff",
-          py: { xs: 6, md: 10 },
-          px: 2,
           textAlign: "center",
+          py: { xs: 10, md: 14 },
+          px: 2,
+          background: `linear-gradient(135deg, #0f1724 0%, #1a2550 100%)`,
+          color: "white",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            width: 300,
+            height: 300,
+            bgcolor: "#5986f7",
+            filter: "blur(120px)",
+            opacity: 0.25,
+            top: -100,
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        />
         <Typography variant="h3" fontWeight={700}>
           Contact Us
         </Typography>
@@ -315,7 +335,7 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 300 : 250 }}
+                      sx={{ width: isMobile ? 350 : 250 }}
                       fullWidth
                       label="Your Name"
                       placeholder="Enter full name"
@@ -328,7 +348,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 300 : 250 }}
+                      sx={{ width: isMobile ? 350 : 250 }}
                       fullWidth
                       label="Phone Number"
                       placeholder="+91 XXXXX XXXXX"
@@ -341,7 +361,7 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 300 : 250 }}
+                      sx={{ width: isMobile ? 350 : 250 }}
                       fullWidth
                       label="Email Address"
                       placeholder="your@email.com"
@@ -353,7 +373,7 @@ export default function ContactPage() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 300 : 250 }}
+                      sx={{ width: isMobile ? 350 : 250 }}
                       fullWidth
                       label="Subject"
                       placeholder="How can we help?"
@@ -365,7 +385,7 @@ export default function ContactPage() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 300 : 1050 }}
+                      sx={{ width: isMobile ? 350 : 1050 }}
                       fullWidth
                       multiline
                       rows={4}

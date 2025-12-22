@@ -37,6 +37,6 @@
     "app/store-client-layout.jsx",
     "app/signup/page.jsx",
     "app/login/page.jsx"
-  ],
+, "app/layout.jsx"  ],
   "exclude": ["node_modules"]
 }

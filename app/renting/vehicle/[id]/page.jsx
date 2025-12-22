@@ -678,7 +678,7 @@ export default function VehicleDetailsPage() {
                 },
               }}
               onClick={() => {
-                window.location.href = "tel:+919999999999";
+                window.location.href = "tel:+01382297500";
               }}
             >
               Call Customer Support

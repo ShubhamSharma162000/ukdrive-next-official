@@ -206,9 +206,7 @@ export default function PremiumCarSlider() {
 
               <Stack direction="row" spacing={1} sx={{ p: 2, pt: 0 }}>
                 <Button
-                  onClick={() =>
-                    router.push(`/home/renting/vehicle/${car._id}`)
-                  }
+                  onClick={() => router.push(`/renting/vehicle/${car._id}`)}
                   fullWidth
                   variant="contained"
                   sx={{
@@ -221,9 +219,7 @@ export default function PremiumCarSlider() {
                 </Button>
 
                 <Button
-                  onClick={() =>
-                    router.push(`/home/renting/vehicle/${car._id}`)
-                  }
+                  onClick={() => router.push(`/renting/vehicle/${car._id}`)}
                   fullWidth
                   variant="outlined"
                   sx={{
@@ -283,7 +279,7 @@ export default function PremiumCarSlider() {
       <Box sx={{ textAlign: "center", mt: 4 }}>
         <Button
           variant="contained"
-          onClick={() => router.push("/home/rentVehicles")}
+          onClick={() => router.push("/rentVehicles")}
           sx={{
             px: 4,
             py: 1.4,

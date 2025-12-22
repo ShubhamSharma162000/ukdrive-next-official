@@ -12,12 +12,13 @@ import {
   useTheme,
   useMediaQuery,
   IconButton,
+  Button,
+  Chip,
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Slider from "react-slick";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const screenshots = [
@@ -57,606 +58,375 @@ export default function AboutUsPage() {
     <Box sx={{ bgcolor: "#f9fafb" }}>
       <Box
         sx={{
-          background: "linear-gradient(135deg, #1e3c72, #2a5298)",
-          color: "#fff",
-          py: { xs: 8, md: 12 },
+          position: "relative",
+          width: "100%",
+          height: isMobile ? 450 : 820,
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          component="img"
+          src="https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/202.jpg"
+          alt="UKDrive Hero"
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "brightness(0.65)",
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            px: { xs: 2.5, sm: 6, md: 10 },
+          }}
+        >
+          <Box sx={{ maxWidth: 650 }}>
+            <Typography
+              variant={isMobile ? "h4" : "h2"}
+              sx={{
+                fontWeight: 900,
+                color: "#ffffff",
+                lineHeight: 1.1,
+                mb: 2,
+              }}
+            >
+              About UKDrive
+              <br />
+              Driving Uttarakhand Forward
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "#d1d5db",
+                fontSize: "0.95rem",
+                mb: 4,
+                maxWidth: 560,
+              }}
+            >
+              From cab bookings and ride sharing to local delivery services,
+              UKDrive is designed to support both riders and drivers with
+              transparency, security, and 24×7 support.
+            </Typography>
+
+            <Stack
+              direction="row"
+              spacing={3}
+              sx={{ mt: 4, color: "#d1d5db", fontSize: "0.85rem" }}
+            >
+              <span>✔ Built for Uttarakhand</span>
+              <span>✔ Verified</span>
+              <span>✔ Safety & 24×7 </span>
+            </Stack>
+          </Box>
+        </Box>
+      </Box>
+
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          padding: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           textAlign: "center",
         }}
       >
-        <Typography variant="h3" fontWeight={800}>
-          About UKDRIVE
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 900,
+            mb: 4,
+            position: "relative",
+            display: "inline-block",
+            color: "#03167d",
+            px: 1,
+            "&:after": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: "-120%",
+              width: "50%",
+              height: "100%",
+              background:
+                "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
+              transform: "skewX(-20deg)",
+              animation: "shine 3s infinite",
+            },
+            "@keyframes shine": {
+              "0%": { left: "-120%" },
+              "60%": { left: "160%" },
+              "100%": { left: "160%" },
+            },
+          }}
+        >
+          India’s Beloved Bike Taxi Service
         </Typography>
-        <Typography mt={2} sx={{ maxWidth: 800, mx: "auto", opacity: 0.9 }}>
-          Building a trusted, local-first ride & delivery ecosystem that
-          empowers drivers, supports communities, and makes everyday travel
-          effortless.
-        </Typography>
-      </Box>
 
-      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
+        <Box sx={{ maxWidth: 520 }}>
+          <Typography color="text.secondary" paragraph>
+            UKDRIVE was born from a simple but powerful idea — solving everyday
+            transportation challenges with trust, transparency, and technology.
+            In many cities and towns, daily commuting and local deliveries still
+            face issues like pricing confusion, driver availability, and lack of
+            accountability.
+          </Typography>
+
+          <Typography color="text.secondary" paragraph>
+            We saw an opportunity to create a platform that works for both
+            passengers and drivers — one that is fair, community-focused, and
+            easy to use. UKDRIVE is built with real-world local needs in mind,
+            not just big-city assumptions.
+          </Typography>
+        </Box>
+      </Grid>
+
+      <Box
+        sx={{
+          minHeight: "90vh",
+          display: "flex",
+          alignItems: "center",
+          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+          color: "#fff",
+          px: { xs: 3, md: 10 },
+        }}
+      >
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
-            <motion.div
-              style={{ display: "flex", justifyContent: "center" }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Typography
-                variant="h4"
-                sx={{
-                  textAlign: "center",
-                  fontWeight: 900,
-                  mb: 4,
-                  position: "relative",
-                  display: "inline-block",
-                  color: "#03167d",
-                  px: 1,
-                  "&:after": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: "-120%",
-                    width: "50%",
-                    height: "100%",
-                    background:
-                      "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                    transform: "skewX(-20deg)",
-                    animation: "shine 3s infinite",
-                  },
-                  "@keyframes shine": {
-                    "0%": { left: "-120%" },
-                    "60%": { left: "160%" },
-                    "100%": { left: "160%" },
-                  },
-                }}
-              >
-                Our Story
-              </Typography>
-            </motion.div>
-
-            <Typography color="text.secondary" paragraph>
-              UKDRIVE was born from a simple but powerful idea — solving
-              everyday transportation challenges with trust, transparency, and
-              technology. In many cities and towns, daily commuting and local
-              deliveries still face issues like pricing confusion, driver
-              availability, and lack of accountability.
-            </Typography>
-            <Typography color="text.secondary" paragraph>
-              We saw an opportunity to create a platform that works for both
-              passengers and drivers — one that is fair, community-focused, and
-              easy to use. UKDRIVE is built with real-world local needs in mind,
-              not just big-city assumptions.
-            </Typography>
-          </Grid>
-          <Stack
-            direction={isMobile ? "column" : "row"}
-            spacing={isMobile ? 4 : 12}
-          >
-            <Grid item xs={12} md={6}>
-              <Paper
-                elevation={0}
-                sx={{
-                  p: { xs: 3.5, md: 5 },
-                  height: "100%",
-                  borderRadius: 5,
-                  background:
-                    "linear-gradient(145deg, rgba(255,255,255,0.9), rgba(213, 219, 245, 0.95))",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "0 25px 60px rgba(30,64,175,0.18)",
-                  transition: "all 0.35s ease",
-                  "&:hover": {
-                    transform: "translateY(-6px)",
-                    boxShadow: "0 35px 80px rgba(30,64,175,0.28)",
-                  },
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontWeight: 900,
-                    fontSize: "1.6rem",
-                    mb: 3,
-                    background: "linear-gradient(90deg, #001f62ff, #080363ff)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  What Makes Us Different
-                </Typography>
-
-                <Stack spacing={2.2}>
-                  {[
-                    "Transparent pricing, no hidden charges",
-                    "Driver-first policies with fair commissions",
-                    "Built specially for Tier-2 & Tier-3 cities",
-                    "Ride + Delivery on a single platform",
-                  ].map((text, i) => (
-                    <Stack
-                      key={i}
-                      direction="row"
-                      spacing={1.5}
-                      alignItems="flex-start"
-                      sx={{
-                        transition: "all 0.25s ease",
-                        "&:hover": {
-                          transform: "translateX(6px)",
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: 26,
-                          height: 26,
-                          borderRadius: "50%",
-                          bgcolor: "#070595ff",
-                          color: "#fff",
-                          fontSize: "0.9rem",
-                          fontWeight: 900,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          mt: "2px",
-                          flexShrink: 0,
-                        }}
-                      >
-                        ✓
-                      </Box>
-
-                      <Typography
-                        sx={{
-                          fontWeight: 600,
-                          color: "text.primary",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {text}
-                      </Typography>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Paper
-                elevation={0}
-                sx={{
-                  p: { xs: 3.5, md: 5 },
-                  height: "100%",
-                  borderRadius: 5,
-                  background:
-                    "linear-gradient(145deg, rgba(255,255,255,0.9), rgba(213, 219, 245, 0.95))",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "0 25px 60px rgba(30,64,175,0.18)",
-                  transition: "all 0.35s ease",
-                  "&:hover": {
-                    transform: "translateY(-6px)",
-                    boxShadow: "0 35px 80px rgba(30,64,175,0.28)",
-                  },
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontWeight: 900,
-                    fontSize: "1.6rem",
-                    mb: 3,
-                    background: "linear-gradient(90deg, #001f62ff, #080363ff)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  Passenger Experience
-                </Typography>
-
-                <Stack spacing={2.2}>
-                  {[
-                    "Transparent pricing with no hidden charges",
-                    "Verified drivers for safe and comfortable rides",
-                    "Real-time ride tracking with accurate ETAs",
-                    "Multiple ride options for every travel need",
-                    "24×7 customer support for peace of mind",
-                  ].map((text, i) => (
-                    <Stack
-                      key={i}
-                      direction="row"
-                      spacing={1.5}
-                      alignItems="flex-start"
-                      sx={{
-                        transition: "all 0.25s ease",
-                        "&:hover": {
-                          transform: "translateX(6px)",
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: 26,
-                          height: 26,
-                          borderRadius: "50%",
-                          bgcolor: "#070595ff",
-                          color: "#fff",
-                          fontSize: "0.9rem",
-                          fontWeight: 900,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          mt: "2px",
-                          flexShrink: 0,
-                        }}
-                      >
-                        ✓
-                      </Box>
-
-                      <Typography
-                        sx={{
-                          fontWeight: 600,
-                          color: "text.primary",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {text}
-                      </Typography>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Paper
-                elevation={0}
-                sx={{
-                  p: { xs: 3.5, md: 5 },
-                  height: "100%",
-                  borderRadius: 5,
-                  background:
-                    "linear-gradient(145deg, rgba(255,255,255,0.9), rgba(213, 219, 245, 0.95))",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "0 25px 60px rgba(30,64,175,0.18)",
-                  transition: "all 0.35s ease",
-                  "&:hover": {
-                    transform: "translateY(-6px)",
-                    boxShadow: "0 35px 80px rgba(30,64,175,0.28)",
-                  },
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontWeight: 900,
-                    fontSize: "1.6rem",
-                    mb: 3,
-                    background: "linear-gradient(90deg, #001f62ff, #080363ff)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  Driver Empowerment
-                </Typography>
-
-                <Stack spacing={2.2}>
-                  {[
-                    "Fair commissions and driver-first policies",
-                    "Flexible working hours with freedom to earn",
-                    "Transparent payouts and timely settlements",
-                    "Easy onboarding with local support",
-                    "Consistent ride requests in nearby areas",
-                  ].map((text, i) => (
-                    <Stack
-                      key={i}
-                      direction="row"
-                      spacing={1.5}
-                      alignItems="flex-start"
-                      sx={{
-                        transition: "all 0.25s ease",
-                        "&:hover": {
-                          transform: "translateX(6px)",
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: 26,
-                          height: 26,
-                          borderRadius: "50%",
-                          bgcolor: "#070595ff",
-                          color: "#ffffffff",
-                          fontSize: "0.9rem",
-                          fontWeight: 900,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          mt: "2px",
-                          flexShrink: 0,
-                        }}
-                      >
-                        ✓
-                      </Box>
-
-                      <Typography
-                        sx={{
-                          fontWeight: 600,
-                          color: "text.primary",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {text}
-                      </Typography>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Paper>
-            </Grid>
-          </Stack>
-        </Grid>
-
-        <Box sx={{ mt: 12 }}>
-          <motion.div
-            style={{ display: "flex", justifyContent: "center" }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Typography
-              variant="h4"
+            <Chip
+              label="Built for Uttarakhand"
               sx={{
-                textAlign: "center",
-                fontWeight: 900,
-                mb: 4,
-                position: "relative",
-                display: "inline-block",
-                color: "#03167d",
-                px: 1,
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  top: 0,
-                  left: "-120%",
-                  width: "50%",
-                  height: "100%",
-                  background:
-                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                  transform: "skewX(-20deg)",
-                  animation: "shine 3s infinite",
-                },
-                "@keyframes shine": {
-                  "0%": { left: "-120%" },
-                  "60%": { left: "160%" },
-                  "100%": { left: "160%" },
-                },
+                mb: 2,
+                bgcolor: "rgba(255,255,255,0.1)",
+                color: "#fff",
+              }}
+            />
+
+            <Typography variant="h2" sx={{ fontWeight: 900, mb: 2 }}>
+              We’re Not Just a Ride App.
+              <br /> We’re UKDrive.
+            </Typography>
+
+            <Typography sx={{ color: "#cbd5f5", mb: 4, maxWidth: 520 }}>
+              UKDrive connects passengers, drivers, and delivery partners
+              through a secure, reliable, and local-first mobility platform
+              designed specially for Uttarakhand.
+            </Typography>
+
+            <Button
+              size="large"
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/ukdrive_uk15?igsh=NXNycTc5OThlenF4",
+                  "_blank"
+                )
+              }
+              sx={{
+                bgcolor: "#f97316",
+                color: "#fff",
+                px: 4,
+                "&:hover": { bgcolor: "#ea580c" },
               }}
             >
-              Building UKDrive, Together
-            </Typography>
-          </motion.div>
+              Know Our Journey
+            </Button>
+          </Grid>
 
-          <Box
-            ref={sliderRef}
+          <Grid item xs={12} md={6}>
+            <Box
+              component="img"
+              src="https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/about%20us%20.jpeg"
+              alt="UKDrive Hero"
+              sx={{
+                borderRadius: 4,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "brightness(0.65)",
+              }}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box my={10} mx={2}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="h4"
             sx={{
-              display: "flex",
-              gap: 3,
-              overflowX: "hidden",
-              scrollBehavior: "smooth",
-              pb: 2,
+              fontWeight: 900,
+              mb: 4,
+              position: "relative",
+              display: "inline-block",
+              color: "#03167d",
               px: 1,
+              textAlign: "center",
+              "&:after": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: "-120%",
+                width: "50%",
+                height: "100%",
+                background:
+                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
+                transform: "skewX(-20deg)",
+                animation: "shine 3s infinite",
+              },
+              "@keyframes shine": {
+                "0%": { left: "-120%" },
+                "60%": { left: "160%" },
+                "100%": { left: "160%" },
+              },
             }}
           >
-            {screenshots.map((src, index) => (
-              <Box
-                key={index}
+            Our Mission & Vision
+          </Typography>
+        </Box>
+
+        <Grid container spacing={4}>
+          {[
+            {
+              title: "Our Mission",
+              text: "To provide safe, affordable, and reliable mobility while empowering local drivers with sustainable income opportunities.",
+            },
+            {
+              title: "Our Vision",
+              text: "To become India’s most trusted local mobility and delivery network, built on fairness, respect, and innovation.",
+            },
+            {
+              title: "Our Values",
+              text: "Transparency • Community • Reliability • Growth with purpose",
+            },
+          ].map((item, i) => (
+            <Grid item xs={12} md={4} key={i}>
+              <Paper
+                elevation={0}
                 sx={{
-                  flexShrink: 0,
-                  width: 300,
-                  display: "flex",
-                  justifyContent: "center",
+                  height: "100%",
+                  p: { xs: 3, md: 4 },
+                  borderRadius: 4,
+                  backgroundColor: "#f5f7ff",
+                  border: "1px solid rgba(99,102,241,0.15)",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow: "0 16px 40px rgba(30,64,175,0.18)",
+                  },
                 }}
               >
+                <Typography
+                  sx={{
+                    fontWeight: 900,
+                    fontSize: "1.2rem",
+                    mb: 1.5,
+                    color: "primary.main",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+
                 <Box
                   sx={{
-                    width: "100%",
-                    borderRadius: 5,
-                    overflow: "hidden",
-                    border: "1px solid #e5e7eb",
+                    width: 40,
+                    height: 3,
+                    bgcolor: "primary.main",
+                    borderRadius: 2,
+                    mb: 2,
                   }}
-                >
-                  <Image
-                    src={src}
-                    alt={`App screenshot ${index + 1}`}
-                    width={300}
-                    height={500}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                    }}
-                  />
-                </Box>
-              </Box>
-            ))}
-          </Box>
-        </Box>
+                />
 
-        <Box mt={10}>
-          <motion.div
-            style={{ display: "flex", justifyContent: "center" }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                textAlign: "center",
-                fontWeight: 900,
-                mb: 4,
-                position: "relative",
-                display: "inline-block",
-                color: "#03167d",
-                px: 1,
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  top: 0,
-                  left: "-120%",
-                  width: "50%",
-                  height: "100%",
-                  background:
-                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                  transform: "skewX(-20deg)",
-                  animation: "shine 3s infinite",
-                },
-                "@keyframes shine": {
-                  "0%": { left: "-120%" },
-                  "60%": { left: "160%" },
-                  "100%": { left: "160%" },
-                },
-              }}
-            >
-              Our Mission & Vision
-            </Typography>
-          </motion.div>
-          <Grid container spacing={4}>
-            {[
-              {
-                title: "Our Mission",
-                text: "To provide safe, affordable, and reliable mobility while empowering local drivers with sustainable income opportunities.",
-              },
-              {
-                title: "Our Vision",
-                text: "To become India’s most trusted local mobility and delivery network, built on fairness, respect, and innovation.",
-              },
-              {
-                title: "Our Values",
-                text: "Transparency • Community • Reliability • Growth with purpose",
-              },
-            ].map((item, i) => (
-              <Grid item xs={12} md={4} key={i}>
-                <Paper
-                  elevation={0}
+                <Typography
                   sx={{
-                    height: "100%",
-                    p: { xs: 3, md: 4 },
-                    borderRadius: 4,
-                    backgroundColor: "#f5f7ff", // subtle brand match
-                    border: "1px solid rgba(99,102,241,0.15)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: "0 16px 40px rgba(30,64,175,0.18)",
-                    },
+                    color: "text.secondary",
+                    fontWeight: 500,
+                    lineHeight: 1.6,
+                    fontSize: "0.95rem",
                   }}
                 >
-                  {/* Title */}
-                  <Typography
-                    sx={{
-                      fontWeight: 900,
-                      fontSize: "1.2rem",
-                      mb: 1.5,
-                      color: "primary.main",
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
+                  {item.text}
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
 
-                  {/* Divider accent */}
-                  <Box
-                    sx={{
-                      width: 40,
-                      height: 3,
-                      bgcolor: "primary.main",
-                      borderRadius: 2,
-                      mb: 2,
-                    }}
-                  />
-
-                  {/* Content */}
-                  <Typography
-                    sx={{
-                      color: "text.secondary",
-                      fontWeight: 500,
-                      lineHeight: 1.6,
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {item.text}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        <Box mt={{ xs: 10, md: 14 }}>
-          <Paper
-            elevation={0}
+      <Box mt={{ xs: 10, md: 14 }}>
+        <Paper
+          elevation={0}
+          sx={{
+            position: "relative",
+            overflow: "hidden",
+            p: { xs: 4, md: 7 },
+            textAlign: "center",
+            background: "linear-gradient(145deg, #f1f5ff 0%, #e8edff 100%)",
+            boxShadow: "0 30px 80px rgba(30,64,175,0.18)",
+            transition: "all 0.35s ease",
+            "&:hover": {
+              transform: "translateY(-6px)",
+              boxShadow: "0 45px 120px rgba(30,64,175,0.28)",
+            },
+          }}
+        >
+          <Box
             sx={{
-              position: "relative",
-              overflow: "hidden",
-              p: { xs: 4, md: 7 },
-              borderRadius: 5,
-              textAlign: "center",
-              background: "linear-gradient(145deg, #f1f5ff 0%, #e8edff 100%)",
-              border: "1px solid rgba(99,102,241,0.18)",
-              boxShadow: "0 30px 80px rgba(30,64,175,0.18)",
-              transition: "all 0.35s ease",
-              "&:hover": {
-                transform: "translateY(-6px)",
-                boxShadow: "0 45px 120px rgba(30,64,175,0.28)",
-              },
+              position: "absolute",
+              width: 300,
+              height: 300,
+              borderRadius: "50%",
+              background: "rgba(99,102,241,0.15)",
+              top: -120,
+              right: -120,
+              filter: "blur(90px)",
+            }}
+          />
+
+          <Typography
+            sx={{
+              fontWeight: 900,
+              fontSize: { xs: "1.8rem", md: "2.4rem" },
+              mb: 2,
+              color: "primary.main",
             }}
           >
-            <Box
-              sx={{
-                position: "absolute",
-                width: 300,
-                height: 300,
-                borderRadius: "50%",
-                background: "rgba(99,102,241,0.15)",
-                top: -120,
-                right: -120,
-                filter: "blur(90px)",
-              }}
-            />
+            Looking Ahead
+          </Typography>
 
-            <Typography
-              sx={{
-                fontWeight: 900,
-                fontSize: { xs: "1.8rem", md: "2.4rem" },
-                mb: 2,
-                color: "primary.main",
-              }}
-            >
-              Looking Ahead
-            </Typography>
+          <Box
+            sx={{
+              width: 60,
+              height: 4,
+              bgcolor: "primary.main",
+              mx: "auto",
+              mb: 3,
+              borderRadius: 99,
+            }}
+          />
 
-            <Box
-              sx={{
-                width: 60,
-                height: 4,
-                bgcolor: "primary.main",
-                mx: "auto",
-                mb: 3,
-                borderRadius: 99,
-              }}
-            />
-
-            <Typography
-              sx={{
-                maxWidth: 880,
-                mx: "auto",
-                fontWeight: 500,
-                fontSize: { xs: "0.95rem", md: "1.05rem" },
-                lineHeight: 1.7,
-                color: "text.secondary",
-              }}
-            >
-              Our journey has just begun. With every city we enter, our focus
-              remains the same — empowering drivers, serving passengers, and
-              strengthening local mobility ecosystems. UKDrive is not just a
-              platform; it’s a long-term commitment to sustainable growth.
-            </Typography>
-          </Paper>
-        </Box>
-      </Container>
+          <Typography
+            sx={{
+              maxWidth: 880,
+              mx: "auto",
+              fontWeight: 500,
+              fontSize: { xs: "0.95rem", md: "1.05rem" },
+              lineHeight: 1.7,
+              color: "text.secondary",
+            }}
+          >
+            Our journey has just begun. With every city we enter, our focus
+            remains the same — empowering drivers, serving passengers, and
+            strengthening local mobility ecosystems. UKDrive is not just a
+            platform; it’s a long-term commitment to sustainable growth.
+          </Typography>
+        </Paper>
+      </Box>
     </Box>
   );
 }

@@ -119,6 +119,7 @@ export default function Sidebar({ open, onClose }) {
             <Button
               fullWidth
               variant="outlined"
+              onClick={onClose}
               sx={{
                 color: "white",
                 borderColor: "rgba(255,255,255,0.5)",
@@ -140,6 +141,7 @@ export default function Sidebar({ open, onClose }) {
             <Button
               fullWidth
               variant="contained"
+              onClick={onClose}
               sx={{
                 backgroundColor: "white",
                 color: "#055849ff",

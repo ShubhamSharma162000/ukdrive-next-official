@@ -100,28 +100,6 @@ export default function LoginClient() {
 
   return (
     <>
-      <Box
-        sx={(theme) => ({
-          width: "100%",
-          position: "fixed",
-          top: 0,
-          left: 2,
-          p: 2,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          zIndex: 10,
-        })}
-      >
-        <img src={"/logo.png"} alt="logo" style={{ width: 172, height: 172 }} />
-        <Typography
-          variant="subtitle1"
-          sx={{ fontWeight: 600, cursor: "pointer", color: "white", mr: 3 }}
-        >
-          Need help?
-        </Typography>
-      </Box>
-
       <Head>
         <title> Log In to UKDrive</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -147,13 +125,6 @@ export default function LoginClient() {
           }}
         >
           <CardContent sx={{ px: 0 }}>
-            {/* <Box sx={{ textAlign: "center", mb: 3 }}>
-              <img
-                src={"/mnt/data/Screenshot 2025-11-22 at 1.52.25\u202FAM.png"}
-                alt="StoreWings logo"
-                style={{ width: 96, height: 96, objectFit: "contain" }}
-              />
-            </Box> */}
             {!openVerifyOTP && (
               <>
                 <Typography

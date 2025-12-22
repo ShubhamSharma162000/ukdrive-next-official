@@ -26,6 +26,7 @@ import { motion } from "framer-motion";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const screenshots = [
   "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/ukdrive%20services%205.jpeg",
@@ -68,6 +69,7 @@ const features = [
 ];
 
 export default function UkdriveShowcase() {
+  const router = useRouter();
   const sliderRef = useRef(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"), {
@@ -129,6 +131,7 @@ export default function UkdriveShowcase() {
 
               <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
                 <Button
+                  href="https://play.google.com/store/search?q=ukdrive&c=apps"
                   variant="contained"
                   size="large"
                   sx={{ borderRadius: 3, px: 4 }}

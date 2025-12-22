@@ -21,6 +21,8 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import SmartExperienceSection from "./SmartExperienceSection";
+import ReferAndEarn from "./ReferAndEarn";
 
 const screenshots = [
   "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/playstore1.jpeg",
@@ -49,6 +51,24 @@ const appScreenshots = [
 
 const faqColors = ["#fcb0a6ff", "#e8f7e5", "#fff4d9"];
 
+const features = [
+  {
+    icon: <DirectionsCarIcon fontSize="inherit" />,
+    title: "Fast & Safe Rides",
+    desc: "Verified drivers with real-time tracking and safe travel.",
+  },
+  {
+    icon: <LocalShippingIcon fontSize="inherit" />,
+    title: "Quick Delivery",
+    desc: "Affordable same-day delivery for parcels and documents.",
+  },
+  {
+    icon: <VerifiedIcon fontSize="inherit" />,
+    title: "24/7 Support",
+    desc: "Always available for rides, rentals, and delivery help.",
+  },
+];
+
 export default function DownloadPage() {
   const sliderRef = useRef(null);
   const sliderRef2 = useRef(null);
@@ -58,7 +78,7 @@ export default function DownloadPage() {
     if (!slider) return;
 
     const interval = setInterval(() => {
-      const cardWidth = 300 + 16; // width + gap
+      const cardWidth = 300 + 16;
 
       if (
         slider.scrollLeft + slider.clientWidth >=
@@ -83,149 +103,129 @@ export default function DownloadPage() {
   }, []);
 
   return (
-    <Box sx={{ width: "100%", px: 0, mx: 0 }}>
+    <Box sx={{ width: "100%" }}>
       <Box
         component={motion.div}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         sx={{
           textAlign: "center",
-          py: { xs: 8, md: 12 },
+          py: { xs: 10, md: 14 },
           px: 2,
-          background: "linear-gradient(135deg, #1e3c72, #2a5298)",
+          background: `linear-gradient(135deg, #0f1724 0%, #1a2550 100%)`,
           color: "white",
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
+        <Box
+          sx={{
+            position: "absolute",
+            width: 300,
+            height: 300,
+            bgcolor: "#5986f7",
+            filter: "blur(120px)",
+            opacity: 0.25,
+            top: -100,
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        />
+
+        <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
           Download UKDrive
         </Typography>
-        <Typography
-          sx={{ maxWidth: 500, mx: "auto", fontSize: 18, opacity: 0.9 }}
-        >
-          Ride Sharing • Delivery • Rentals — All in one super app for daily
-          travel.
-        </Typography>
 
-        <Button
-          component="a"
-          href="https://play.google.com/store/search?q=ukdrive&c=apps"
-          target="_blank"
-          variant="contained"
+        <Typography
           sx={{
-            mt: 4,
-            background: "white",
-            color: "#0057ff",
-            px: 4,
-            py: 1.8,
+            maxWidth: 520,
+            mx: "auto",
             fontSize: 18,
-            borderRadius: 3,
-            "&:hover": { background: "#e5e8ff" },
+            opacity: 0.9,
+            mb: 4,
           }}
         >
-          <AndroidIcon sx={{ mr: 1 }} /> Get it on Play Store
-        </Button>
-      </Box>
+          Ride Booking • Ride Sharing • Delivery — One super app for your daily
+          travel and logistics.
+        </Typography>
 
-      <Box
-        sx={{
-          mt: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        <motion.div
-          style={{ display: "flex", justifyContent: "center" }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Typography
-            variant="h4"
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
+          <Button
+            component="a"
+            href="https://play.google.com/store/search?q=ukdrive&c=apps"
+            target="_blank"
+            variant="contained"
+            startIcon={<AndroidIcon />}
             sx={{
-              textAlign: "center",
-              fontWeight: 900,
-              mb: 4,
-              position: "relative",
-              display: "inline-block",
-              color: "#03167d",
-              px: 1,
-              "&:after": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: "-120%",
-                width: "50%",
-                height: "100%",
-                background:
-                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                transform: "skewX(-20deg)",
-                animation: "shine 3s infinite",
-              },
-              "@keyframes shine": {
-                "0%": { left: "-120%" },
-                "60%": { left: "160%" },
-                "100%": { left: "160%" },
+              background: "#5986f7",
+              color: "white",
+              px: 5,
+              py: 1.8,
+              fontSize: 18,
+              borderRadius: 3,
+              boxShadow: "0 12px 30px rgba(89,134,247,0.35)",
+              "&:hover": {
+                background: "#4b76e8",
               },
             }}
           >
-            Why Choose UKDrive?
-          </Typography>
+            Get it on Play Store
+          </Button>
         </motion.div>
-
-        <Grid
-          container
-          spacing={3}
-          justifyContent="center"
-          alignItems="center"
-          sx={{ width: "100%" }}
+      </Box>
+      <SmartExperienceSection />
+      <ReferAndEarn />
+      <Box sx={{ py: 6, px: 2, textAlign: "center" }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 900,
+            mb: 6,
+            color: "#0f1724",
+            position: "relative",
+            display: "inline-block",
+          }}
         >
-          {[
-            {
-              icon: <DirectionsCarIcon sx={{ fontSize: 45 }} />,
-              title: "Fast & Safe Rides",
-              desc: "Verified drivers with live tracking for secure travel.",
-            },
-            {
-              icon: <LocalShippingIcon sx={{ fontSize: 45 }} />,
-              title: "Quick Delivery",
-              desc: "Affordable same-day delivery for parcels & documents.",
-            },
-            {
-              icon: <StarIcon sx={{ fontSize: 45 }} />,
-              title: "Top Rated Service",
-              desc: "Thousands of happy customers trust UKDrive daily.",
-            },
-            {
-              icon: <VerifiedIcon sx={{ fontSize: 45 }} />,
-              title: "Reliable Support",
-              desc: "24/7 customer support for rides & rent & delivery help.",
-            },
-          ].map((item, index) => (
-            <Grid item xs={12} md={3} key={index}>
+          Why Choose UKDrive?
+        </Typography>
+
+        <Grid container spacing={4} justifyContent="center">
+          {features.map((item, i) => (
+            <Grid item xs={12} sm={6} md={3} key={i}>
               <Card
                 component={motion.div}
-                whileHover={{ scale: 1.04 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 20px 45px rgba(0,0,0,0.15)",
+                }}
+                transition={{ duration: 0.4 }}
                 sx={{
-                  mx: 4,
-                  textAlign: "center",
-                  py: 3,
-                  borderRadius: 4,
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.07)",
-                  background: "#dae6fdff",
+                  height: "100%",
+                  borderRadius: 5,
+                  background:
+                    "linear-gradient(180deg, #ffffff 0%, #f4f7ff 100%)",
                 }}
               >
-                <CardContent>
-                  <Box sx={{ color: "#07348dff", mb: 1 }}>{item.icon}</Box>
+                <CardContent sx={{ py: 5 }}>
+                  <Box
+                    sx={{
+                      fontSize: 44,
+                      color: "#5986f7",
+                      mb: 2,
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+
                   <Typography variant="h6" sx={{ fontWeight: 700 }}>
                     {item.title}
                   </Typography>
-                  <Typography sx={{ mt: 1, color: "gray" }}>
+
+                  <Typography sx={{ mt: 1, color: "text.secondary" }}>
                     {item.desc}
                   </Typography>
                 </CardContent>
@@ -233,268 +233,6 @@ export default function DownloadPage() {
             </Grid>
           ))}
         </Grid>
-      </Box>
-
-      <Box sx={{ mt: 12 }}>
-        <motion.div
-          style={{ display: "flex", justifyContent: "center" }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              textAlign: "center",
-              fontWeight: 900,
-              mb: 4,
-              position: "relative",
-              display: "inline-block",
-              color: "#03167d",
-              px: 1,
-              "&:after": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: "-120%",
-                width: "50%",
-                height: "100%",
-                background:
-                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                transform: "skewX(-20deg)",
-                animation: "shine 3s infinite",
-              },
-              "@keyframes shine": {
-                "0%": { left: "-120%" },
-                "60%": { left: "160%" },
-                "100%": { left: "160%" },
-              },
-            }}
-          >
-            UKDrive App Screenshots
-          </Typography>
-        </motion.div>
-
-        <Box
-          ref={sliderRef}
-          sx={{
-            display: "flex",
-            gap: 2,
-            overflowX: "auto",
-            scrollBehavior: "smooth",
-            px: 2,
-            "&::-webkit-scrollbar": { display: "none" },
-            WebkitOverflowScrolling: "touch",
-          }}
-        >
-          {appScreenshots.map((src, index) => (
-            <Box
-              key={index}
-              sx={{
-                flexShrink: 0,
-                minWidth: 300,
-                maxWidth: 300,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  borderRadius: 5,
-                  overflow: "hidden",
-                  border: "1px solid #e5e7eb",
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`App screenshot ${index + 1}`}
-                  width={300}
-                  height={300}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                  }}
-                />
-              </Box>
-            </Box>
-          ))}
-        </Box>
-      </Box>
-
-      <Box sx={{ mt: 10 }}>
-        <motion.div
-          style={{ display: "flex", justifyContent: "center" }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              textAlign: "center",
-              fontWeight: 900,
-              mb: 4,
-              position: "relative",
-              display: "inline-block",
-              color: "#03167d",
-              px: 1,
-              "&:after": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: "-120%",
-                width: "50%",
-                height: "100%",
-                background:
-                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                transform: "skewX(-20deg)",
-                animation: "shine 3s infinite",
-              },
-              "@keyframes shine": {
-                "0%": { left: "-120%" },
-                "60%": { left: "160%" },
-                "100%": { left: "160%" },
-              },
-            }}
-          >
-            What Our Users Say
-          </Typography>
-        </motion.div>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center", // ✅ center horizontally
-            width: "100%",
-          }}
-        >
-          <Grid container spacing={3} alignItems={"center"}>
-            {[
-              {
-                name: "Amit Sharma",
-                review:
-                  "UKDrive is the fastest app I’ve used. Very good service !",
-              },
-              {
-                name: "Priya Singh",
-                review:
-                  "Delivery service is super quick. I use it weekly for sending parcels.",
-              },
-              {
-                name: "Rahul Verma",
-                review: "Affordable rides and clean vehicles. 5/5 experience.",
-              },
-            ].map((item, i) => (
-              <Grid item xs={12} md={4} key={i}>
-                <Card
-                  component={motion.div}
-                  whileHover={{ scale: 1.03 }}
-                  sx={{
-                    borderRadius: 4,
-                    p: 2,
-                    boxShadow: "0 8px 25px rgba(0,0,0,0.06)",
-                    background: "#dae6fdff",
-                  }}
-                >
-                  <Typography sx={{ fontSize: 16, mb: 2, color: "gray" }}>
-                    “{item.review}”
-                  </Typography>
-                  <Typography sx={{ fontWeight: 700 }}>{item.name}</Typography>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Box>
-
-      <Box sx={{ my: 12 }}>
-        <motion.div
-          style={{ display: "flex", justifyContent: "center" }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              textAlign: "center",
-              fontWeight: 900,
-              mb: 4,
-              position: "relative",
-              display: "inline-block",
-              color: "#03167d",
-              px: 1,
-              "&:after": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: "-120%",
-                width: "50%",
-                height: "100%",
-                background:
-                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent)",
-                transform: "skewX(-20deg)",
-                animation: "shine 3s infinite",
-              },
-              "@keyframes shine": {
-                "0%": { left: "-120%" },
-                "60%": { left: "160%" },
-                "100%": { left: "160%" },
-              },
-            }}
-          >
-            Recents Comments
-          </Typography>
-        </motion.div>
-
-        <Box
-          ref={sliderRef2}
-          sx={{
-            display: "flex",
-            gap: 2,
-            overflowX: "auto",
-            scrollBehavior: "smooth",
-            px: 2,
-            "&::-webkit-scrollbar": { display: "none" },
-            WebkitOverflowScrolling: "touch",
-          }}
-        >
-          {screenshots.map((src, index) => (
-            <Box
-              key={index}
-              sx={{
-                flexShrink: 0,
-                minWidth: 300,
-                maxWidth: 300,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  borderRadius: 5,
-                  overflow: "hidden",
-                  border: "1px solid #e5e7eb",
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`App screenshot ${index + 1}`}
-                  width={300}
-                  height={600}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                  }}
-                />
-              </Box>
-            </Box>
-          ))}
-        </Box>
       </Box>
     </Box>
   );
