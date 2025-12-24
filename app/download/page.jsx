@@ -24,6 +24,22 @@ import { useEffect, useRef } from "react";
 import SmartExperienceSection from "./SmartExperienceSection";
 import ReferAndEarn from "./ReferAndEarn";
 
+const metadata = {
+  title: "Download UKDrive App | Ride Booking & Delivery in Uttarakhand",
+  description:
+    "Download the UKDrive app to book cabs, bike taxis, autos, and delivery services in Kotdwara and across Uttarakhand. Safe rides, verified drivers, affordable fares, and 24x7 support.",
+  alternates: {
+    canonical: "https://ukdrive.in/download",
+  },
+  openGraph: {
+    title: "Download UKDrive App – Your Ride, Your Way",
+    description:
+      "Install the UKDrive app for easy ride booking, ride sharing, and parcel delivery in Kotdwara and Uttarakhand. Available on Android.",
+    url: "https://ukdrive.in/download",
+    type: "website",
+  },
+};
+
 const screenshots = [
   "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/playstore1.jpeg",
   "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/playstore2.jpeg",

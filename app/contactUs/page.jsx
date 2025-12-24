@@ -27,6 +27,22 @@ import api from "../../lib/api";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 
+const metadata = {
+  title: "Contact UKDrive | Customer Support & Help in Kotdwara",
+  description:
+    "Get in touch with UKDrive for ride booking, ride sharing, or delivery support in Kotdwara and across Uttarakhand. Contact our customer care team for quick assistance and 24x7 support.",
+  alternates: {
+    canonical: "https://ukdrive.in/contactUs",
+  },
+  openGraph: {
+    title: "Contact UKDrive – 24x7 Customer Support",
+    description:
+      "Need help with rides or deliveries? Contact UKDrive customer support in Kotdwara and Uttarakhand for fast and reliable assistance.",
+    url: "https://ukdrive.in/contactUs",
+    type: "website",
+  },
+};
+
 export default function ContactPage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"), { noSsr: true });

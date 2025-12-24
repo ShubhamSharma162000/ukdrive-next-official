@@ -28,6 +28,22 @@ const screenshots = [
   "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/WhatsApp%20Image%202025-12-11%20at%206.02.44%20PM.jpeg",
 ];
 
+const metadata = {
+  title: "About UKDrive | Ride Booking, Ride Sharing & Delivery App",
+  description:
+    "Learn about UKDrive, a trusted ride booking, ride sharing, and delivery platform in Kotdwara and Uttarakhand. Our mission is to provide safe, affordable, and reliable transportation with verified drivers and 24x7 support.",
+  alternates: {
+    canonical: "https://ukdrive.in/aboutUs",
+  },
+  openGraph: {
+    title: "About UKDrive – Your Ride, Your Way",
+    description:
+      "UKDrive is a local ride booking and delivery app serving Kotdwara and Uttarakhand with verified drivers, real-time tracking, and affordable fares.",
+    url: "https://ukdrive.in/aboutUs",
+    type: "website",
+  },
+};
+
 export default function AboutUsPage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"), { noSsr: true });

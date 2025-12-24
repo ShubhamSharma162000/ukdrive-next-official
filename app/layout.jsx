@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Providers from "./providers";
 import StoreClientLayout from "./store-client-layout";
 export const metadata = {
@@ -11,6 +12,26 @@ export const metadata = {
 
   metadataBase: new URL("https://ukdrive.in"),
 
+  keywords: [
+    "UKDrive",
+    "ride booking app Uttarakhand",
+    "cab booking Uttarakhand",
+    "bike taxi Uttarakhand",
+    "auto booking Uttarakhand",
+    "local delivery service",
+    "ride sharing app India",
+    "rent bike",
+    "rent car",
+    "UKDrive Kotdwara",
+    "UKDrive Uttarakhand",
+    "UKDrive taxi service",
+    "UKDrive ride booking app",
+    "UKDrive delivery service",
+    "kotdwara taxi",
+    "kotdwara cab",
+    "cab for booking kotdwara",
+    "cab near by me",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -32,7 +53,7 @@ export const metadata = {
     siteName: "UKDrive",
     images: [
       {
-        url: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/ukdrive%20banner%201.png",
+        url: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/ukdrive%20banner%201.png?updatedAt=1766089352036",
         width: 1200,
         height: 630,
         alt: "UKDrive – Your Ride, Your Way",
@@ -48,7 +69,7 @@ export const metadata = {
     description:
       "Ride booking, ride sharing & delivery services with verified drivers and affordable fares.",
     images: [
-      "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/ukdrive%20banner%201.png",
+      "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/ukdrive%20banner%201.png?updatedAt=1766089352036",
     ],
   },
 };
@@ -56,6 +77,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Script
+        id="ukdrive-app-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MobileApplication",
+            name: "UKDrive",
+            operatingSystem: "Android",
+            applicationCategory: "TransportationApplication",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "INR",
+            },
+          }),
+        }}
+      />
       <body>
         <Providers>
           <StoreClientLayout>{children}</StoreClientLayout>

@@ -16,6 +16,22 @@ import {
 import { CarCard } from "../components/CarCard";
 import api from "@/lib/api";
 
+const metadata = {
+  title: "Rent a Vehicle in Kotdwara & Uttarakhand | UKDrive",
+  description:
+    "Rent a car, bike, or auto with UKDrive in Kotdwara and across Uttarakhand. Affordable vehicle rental options with flexible duration, transparent pricing, and trusted local partners.",
+  alternates: {
+    canonical: "https://ukdrive.in/rentVehicles",
+  },
+  openGraph: {
+    title: "Rent a Vehicle with UKDrive – Easy & Affordable Rentals",
+    description:
+      "Looking to rent a car or bike in Kotdwara or Uttarakhand? UKDrive offers convenient vehicle rental services with reliable options and local support.",
+    url: "https://ukdrive.in/rentVehicles",
+    type: "website",
+  },
+};
+
 const NoData = ({ text = "No vehicles available" }) => (
   <Box
     sx={{
