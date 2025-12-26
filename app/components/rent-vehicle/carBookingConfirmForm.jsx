@@ -75,7 +75,7 @@ export default function CarBookingConfirmForm({ open, onClose, car, days }) {
       await loadRazorpay();
 
       const res = await api.post("/api/v1/payment/create-order-car-booking", {
-        amount: car?.rentPerDay * days,
+        amount: car?.advancePayment * days,
         carId: car?._id,
         vehicleName: car?.vehicleName,
       });
