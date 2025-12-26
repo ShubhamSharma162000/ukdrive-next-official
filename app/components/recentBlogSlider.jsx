@@ -129,7 +129,7 @@ export default function RecentBlogSlider() {
           alignItems: "center",
         }}
       >
-        <IconButton
+        <Box
           sx={{
             display: { xs: "none", md: "flex" },
             position: "absolute",
@@ -139,9 +139,7 @@ export default function RecentBlogSlider() {
             boxShadow: 2,
             "&:hover": { bgcolor: "#eee" },
           }}
-        >
-          <ArrowBackIosNewIcon fontSize="small" />
-        </IconButton>
+        />
 
         <Box
           ref={sliderRef}
@@ -226,7 +224,7 @@ export default function RecentBlogSlider() {
           ))}
         </Box>
 
-        <IconButton
+        <Box
           sx={{
             display: { xs: "none", md: "flex" },
             position: "absolute",
@@ -236,9 +234,7 @@ export default function RecentBlogSlider() {
             boxShadow: 2,
             "&:hover": { bgcolor: "#eee" },
           }}
-        >
-          <ArrowForwardIosIcon fontSize="small" />
-        </IconButton>
+        />
       </Box>
     </Box>
   );

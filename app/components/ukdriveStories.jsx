@@ -216,23 +216,6 @@ export default function UkdriveStories() {
           alignItems: "center",
         }}
       >
-        <IconButton
-          sx={{
-            position: "absolute",
-            left: -25,
-            zIndex: 10,
-            width: 60,
-            height: 60,
-            bgcolor: "#f5f5f5",
-            borderRadius: "50%",
-            boxShadow: 2,
-            display: { xs: "none", md: "flex" },
-            "&:hover": { bgcolor: "#eeeeee" },
-          }}
-        >
-          <ArrowBackIosNewIcon />
-        </IconButton>
-
         <Box
           ref={sliderRef}
           sx={{
@@ -385,23 +368,6 @@ export default function UkdriveStories() {
             </motion.div>
           ))}
         </Box>
-
-        <IconButton
-          sx={{
-            position: "absolute",
-            right: -25,
-            zIndex: 10,
-            width: 60,
-            height: 60,
-            bgcolor: "#f5f5f5",
-            borderRadius: "50%",
-            boxShadow: 2,
-            display: { xs: "none", md: "flex" },
-            "&:hover": { bgcolor: "#eeeeee" },
-          }}
-        >
-          <ArrowForwardIosIcon />
-        </IconButton>
       </Box>
     </Box>
   );

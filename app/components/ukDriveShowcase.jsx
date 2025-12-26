@@ -153,6 +153,9 @@ export default function UkdriveShowcase() {
 
                 <Button
                   startIcon={<PlayArrowIcon />}
+                  href="https://www.youtube.com/watch?v=vnlVUFdI5FE"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
                     borderRadius: 3,
                     color: "#fff",

@@ -91,12 +91,12 @@ export default function PremiumCarSlider() {
             fontSize: { xs: "2.2rem", md: "3.2rem" },
           }}
         >
-          Premium Cars for Rent
+          Cars for Rent
         </Typography>
       </motion.div>
 
       <Box sx={{ position: "relative", display: "flex", alignItems: "center" }}>
-        <IconButton
+        {/* <IconButton
           onClick={() => scroll("left")}
           sx={{
             position: "absolute",
@@ -108,7 +108,7 @@ export default function PremiumCarSlider() {
           }}
         >
           <ArrowBackIosNewIcon fontSize="small" />
-        </IconButton>
+        </IconButton> */}
 
         <Box
           ref={sliderRef}
@@ -259,7 +259,7 @@ export default function PremiumCarSlider() {
             </MotionCard>
           ))}
         </Box>
-
+        {/* 
         <IconButton
           onClick={() => scroll("right")}
           sx={{
@@ -272,7 +272,7 @@ export default function PremiumCarSlider() {
           }}
         >
           <ArrowForwardIosIcon fontSize="small" />
-        </IconButton>
+        </IconButton> */}
       </Box>
 
       <Box sx={{ textAlign: "center", mt: 4 }}>

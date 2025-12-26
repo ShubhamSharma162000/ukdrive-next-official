@@ -8,8 +8,9 @@ export default function CarCategorySection() {
       title: "Sedans",
       desc: `Your best rental-like option, perfect for road trips with your 
 family or group outings with ample space and comfort for 5–6 passengers.`,
-      btn: "RENT SEDANS",
+      btn: "SEDANS",
       img: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/sedan.jpg",
+      url: "https://www.garwarehitechfilms.com/paint-protection-films/blog/best-sedan-cars-in-india",
     },
     {
       title: "Hatchbacks",
@@ -17,6 +18,7 @@ family or group outings with ample space and comfort for 5–6 passengers.`,
 Great for daily commutes and city rides.`,
       btn: "HATCHBACKS",
       img: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/FAMLIY%20CAR.jpg",
+      url: "https://www.quiklyz.com/blog/5-reasons-why-hatchback-cars-are-perfect-for-daily-ride",
     },
     {
       title: "Electric Cars",
@@ -24,6 +26,7 @@ Great for daily commutes and city rides.`,
 for city commutes and weekend getaways.`,
       img: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/electric.jpg",
       btn: "EVs",
+      url: "https://bolt.earth/blog/future-electric-vehicles-india?srsltid=AfmBOop9WB8FxrmN2UFNd4dvUs3AdPCeZLqhf4AzMoTUwPu4F9qFpya_",
     },
     {
       title: "SUVs and Family Cars",
@@ -31,6 +34,7 @@ for city commutes and weekend getaways.`,
 Comfortable for 6–7 passengers with extra luggage room.`,
       btn: "SUVs",
       img: "https://ik.imagekit.io/ayt9mk2gv9/UKDrive.in/xuv.webp",
+      url: "https://www.spinny.com/blog/why-india-loves-suvs/",
     },
   ];
 
@@ -180,6 +184,9 @@ Comfortable for 6–7 passengers with extra luggage room.`,
               <Button
                 variant="contained"
                 fullWidth
+                href={item?.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: "#000",
                   color: "white",
