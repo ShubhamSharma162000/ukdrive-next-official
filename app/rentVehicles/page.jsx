@@ -70,7 +70,7 @@ export default function RentingPage() {
     getAllVehicle();
   }, []);
 
-  const categories = ["Hatchback", "Sedan", "SUV", "Luxury", "Van"];
+  const categories = ["Hatchback", "Sedan", "SUV", "Luxury"];
 
   const getVehiclesByCategory = (category) =>
     vehicles.filter((v) => v.type?.toLowerCase() === category.toLowerCase());
@@ -183,13 +183,6 @@ export default function RentingPage() {
 
             return (
               <Box key={category} sx={{ mb: 8 }}>
-                {/* <Typography
-                variant="h4"
-                sx={{ fontWeight: 800, mb: 3, color: "#222" }}
-              >
-                {category} Cars
-              </Typography> */}
-
                 <Grid container spacing={4}>
                   {cars.map((car) => (
                     <Grid

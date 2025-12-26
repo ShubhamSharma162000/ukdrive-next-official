@@ -216,9 +216,10 @@ export default function FaqSection() {
             "& .MuiTab-root": {
               fontWeight: 700,
               textTransform: "none",
-              fontSize: isMobile ? 14 : 16,
-              minWidth: isMobile ? 90 : 120,
+              fontSize: isMobile ? 12 : 16,
+              minWidth: isMobile ? 80 : 120,
               px: isMobile ? 1 : 2,
+              px: isMobile ? 0 : 2,
             },
             "& .MuiTab-root.Mui-selected": {
               color: "#030761",

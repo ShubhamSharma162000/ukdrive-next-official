@@ -15,6 +15,7 @@ import {
   useTheme,
   useMediaQuery,
   CircularProgress,
+  CardContent,
 } from "@mui/material";
 import { AuthContext } from "@/context/authContext";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -26,6 +27,7 @@ import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import StarIcon from "@mui/icons-material/Star";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { Dialog, DialogTitle, DialogContent, TextField } from "@mui/material";
@@ -62,7 +64,6 @@ export default function VehicleDetailsPage() {
     const fetchVehicle = async () => {
       try {
         const res = await api.get(`/api/v1/vehicle/getvehicle/${id}`);
-        console.log(res);
         if (res.data.success) {
           setCar(res?.data?.data);
         }
@@ -75,6 +76,14 @@ export default function VehicleDetailsPage() {
 
     fetchVehicle();
   }, [id]);
+
+  const minDays = car?.type === "Luxury" ? 2 : 1;
+
+  useEffect(() => {
+    if (!car) return;
+
+    setDays((prev) => Math.max(prev, minDays));
+  }, [car?.type]);
 
   const handleConfirmBooking = () => {
     if (!isAuthenticated) {
@@ -118,7 +127,6 @@ export default function VehicleDetailsPage() {
         phone: phone,
         vehicleName: car?.vehicleName,
       });
-      console.log(res);
       if (res?.data?.success) {
         toast.success(res?.data?.message, {
           description: "Thanks !! Our team will contact you shortly",
@@ -133,11 +141,28 @@ export default function VehicleDetailsPage() {
     }
   };
 
-  const updateDays = (action) => {
+  const updateDays = (type) => {
     setDays((prev) => {
-      if (action === "dec" && prev <= 1) return prev;
-      return action === "inc" ? prev + 1 : prev - 1;
+      if (type === "dec") {
+        return Math.max(prev - 1, minDays);
+      }
+      return prev + 1;
     });
+  };
+
+  const handleShare = () => {
+    const shareData = {
+      title: "UKDrive – Rent a Vehicle",
+      text: "Check out this vehicle on UKDrive. Easy booking, affordable pricing.",
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(shareData.url);
+      alert("Link copied to clipboard");
+    }
   };
 
   if (loading) {
@@ -289,7 +314,7 @@ export default function VehicleDetailsPage() {
               <IconButton>
                 <FavoriteBorderIcon />
               </IconButton>
-              <IconButton>
+              <IconButton onClick={handleShare}>
                 <ShareIcon />
               </IconButton>
             </Box>
@@ -373,6 +398,26 @@ export default function VehicleDetailsPage() {
 
           <Divider sx={{ my: 3 }} />
 
+          {car?.type === "Luxury" && (
+            <Card
+              sx={{
+                my: 2,
+                borderRadius: 3,
+                bgcolor: "#0b0489ff",
+                color: "#FFD700",
+              }}
+            >
+              <CardContent
+                sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              >
+                <StarIcon />
+                <Typography fontWeight={500}>
+                  Minimum booking period for luxury cars is 2 days.
+                </Typography>
+              </CardContent>
+            </Card>
+          )}
+
           <Box
             sx={{
               p: 2.5,
@@ -405,7 +450,7 @@ export default function VehicleDetailsPage() {
               >
                 <IconButton
                   onClick={() => updateDays("dec")}
-                  disabled={days <= 1 || loadingDays}
+                  disabled={days <= minDays || loadingDays}
                   sx={{
                     bgcolor: "#0A5CFF",
                     color: "#fff",

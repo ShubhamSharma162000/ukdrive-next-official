@@ -13,7 +13,6 @@ const AuthProvider = ({ children }) => {
   const refreshUser = useCallback(async () => {
     try {
       const res = await api.get("/api/v1/user/getuserimformation");
-      console.log(res);
       setUser(res.data.data);
       setIsAuthenticated(true);
     } catch (err) {

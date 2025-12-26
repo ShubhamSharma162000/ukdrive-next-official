@@ -24,7 +24,6 @@ export default function ReferAndEarn() {
         background: "linear-gradient(180deg, #0f1724 0%, #121c2d 100%)",
         color: "white",
         borderRadius: { md: 6 },
-        mt: 10,
       }}
     >
       <Container maxWidth="lg">

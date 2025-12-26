@@ -47,28 +47,6 @@ const metadata = {
 export default function AboutUsPage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"), { noSsr: true });
-  const sliderRef = useRef(null);
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const CARD_WIDTH = 300;
-    const GAP = 24; // gap: 3 => 3 * 8px
-    const STEP = CARD_WIDTH + GAP;
-
-    const interval = setInterval(() => {
-      const isEnd =
-        slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - STEP;
-
-      if (isEnd) {
-        slider.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        slider.scrollBy({ left: STEP, behavior: "smooth" });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <Box sx={{ bgcolor: "#f9fafb" }}>
@@ -205,7 +183,7 @@ export default function AboutUsPage() {
 
       <Box
         sx={{
-          minHeight: "90vh",
+          minHeight: { xs: "auto", md: "90vh" },
           display: "flex",
           alignItems: "center",
           background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",

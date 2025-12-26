@@ -79,12 +79,10 @@ export default function CarBookingConfirmForm({ open, onClose, car, days }) {
         carId: car?._id,
         vehicleName: car?.vehicleName,
       });
-      console.log("ORDER CREATED:", res.data);
       const order = res?.data?.order;
       const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        // amount: 1,    order?.amount
-        amount: 1,
+        amount: order?.amount,
         currency: "INR",
         name: "UKDrive",
         description: `${car?.vehicleName} Confirmation Payment`,
@@ -104,7 +102,6 @@ export default function CarBookingConfirmForm({ open, onClose, car, days }) {
               rentPrice: car?.rentPerDay * days,
             }
           );
-          console.log(verifyRes);
           if (verifyRes?.data?.success) {
             toast.success("Booking Confirmed ", {
               description: "Thanks !! Our team will contact you shortly",

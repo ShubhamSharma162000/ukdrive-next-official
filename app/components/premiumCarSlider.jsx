@@ -28,7 +28,6 @@ export default function PremiumCarSlider() {
       try {
         const res = await api.get("/api/v1/vehicle/getallvehicle");
         if (res.data.success) {
-          console.log("for car slider ", res.data.data);
           setVehicles(res.data.data);
         }
       } catch (error) {

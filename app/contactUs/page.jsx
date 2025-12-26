@@ -344,6 +344,7 @@ export default function ContactPage() {
                 component="form"
                 onSubmit={handleSubmit}
                 textAlign={isMobile ? "center" : ""}
+                justifyContent={isMobile ? "center" : ""}
               >
                 <Grid container spacing={2}>
                   <Grid item xs={6}>
@@ -351,8 +352,8 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 350 : 250 }}
-                      fullWidth
+                      sx={{ width: isMobile ? 290 : 250 }}
+                      // fullWidth
                       label="Your Name"
                       placeholder="Enter full name"
                       required
@@ -364,8 +365,8 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 350 : 250 }}
-                      fullWidth
+                      sx={{ width: isMobile ? 290 : 250 }}
+                      // fullWidth
                       label="Phone Number"
                       placeholder="+91 XXXXX XXXXX"
                       required
@@ -377,8 +378,8 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 350 : 250 }}
-                      fullWidth
+                      sx={{ width: isMobile ? 290 : 250 }}
+                      // fullWidth
                       label="Email Address"
                       placeholder="your@email.com"
                     />
@@ -389,8 +390,8 @@ export default function ContactPage() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 350 : 250 }}
-                      fullWidth
+                      sx={{ width: isMobile ? 290 : 250 }}
+                      // fullWidth
                       label="Subject"
                       placeholder="How can we help?"
                     />
@@ -401,8 +402,8 @@ export default function ContactPage() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      sx={{ width: isMobile ? 350 : 1050 }}
-                      fullWidth
+                      sx={{ width: isMobile ? 290 : 1050 }}
+                      // fullWidth
                       multiline
                       rows={4}
                       label="Message"

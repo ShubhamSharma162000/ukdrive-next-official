@@ -54,7 +54,6 @@ export default function LoginClient() {
         phoneNumber: phone,
         isRegistration: false,
       });
-      console.log(res);
       if (res?.data?.success) {
         setSessionId(res?.data?.sessionId);
         setOpenVerifyOTP(true);
@@ -77,7 +76,6 @@ export default function LoginClient() {
         sessionId: sessionId,
         isRegistration: false,
       });
-      console.log(res);
       if (res?.data?.success) {
         toast.success("OTP Verified 🎉", {
           description: "Redirecting you to home...",

@@ -86,38 +86,6 @@ const features = [
 ];
 
 export default function DownloadPage() {
-  const sliderRef = useRef(null);
-  const sliderRef2 = useRef(null);
-
-  const startAutoScroll = (ref) => {
-    const slider = ref.current;
-    if (!slider) return;
-
-    const interval = setInterval(() => {
-      const cardWidth = 300 + 16;
-
-      if (
-        slider.scrollLeft + slider.clientWidth >=
-        slider.scrollWidth - cardWidth
-      ) {
-        slider.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        slider.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
-    }, 2000);
-
-    return interval;
-  };
-  useEffect(() => {
-    const i1 = startAutoScroll(sliderRef);
-    const i2 = startAutoScroll(sliderRef2);
-
-    return () => {
-      clearInterval(i1);
-      clearInterval(i2);
-    };
-  }, []);
-
   return (
     <Box sx={{ width: "100%" }}>
       <Box

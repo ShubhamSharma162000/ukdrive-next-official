@@ -105,7 +105,7 @@ export default function Footer() {
           </Typography>
           <Stack spacing={1.2}>
             <Typography
-              onClick={() => router.push("/home/aboutUs")}
+              onClick={() => router.push("/aboutUs")}
               sx={{
                 color: "grey.400",
                 cursor: "pointer",
@@ -115,7 +115,7 @@ export default function Footer() {
               About Us
             </Typography>
             <Typography
-              onClick={() => router.push("/home/contactUs")}
+              onClick={() => router.push("/contactUs")}
               sx={{
                 color: "grey.400",
                 cursor: "pointer",
@@ -125,7 +125,7 @@ export default function Footer() {
               Support
             </Typography>
             <Typography
-              onClick={() => router.push("/home/rentVehicles")}
+              onClick={() => router.push("/rentVehicles")}
               sx={{
                 color: "grey.400",
                 cursor: "pointer",
